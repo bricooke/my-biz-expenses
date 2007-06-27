@@ -1,0 +1,14 @@
+%td{:colspan => 6}
+  %div.expense_form_div
+    - remote_form_for :expense, :url => url, :html => {:method => method, :id => "expense_form"} do |f|
+      = f.date_select :created_at
+      = "$" + f.text_field(:price, :size => 14)
+      = f.text_field :name, :size => 30
+      - name = @expense.category.name if @expense
+      = text_field_with_auto_complete :expense, :category, {:size => 5, :value => name || ""}, {:skip_style => false}
+      = f.text_field :tag_list, :size => 17
+      %br/
+      
+      = submit_tag "Save"
+      - if @expense
+        = link_to "Cancel", expenses_url

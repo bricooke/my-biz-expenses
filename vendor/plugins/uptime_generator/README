@@ -1,0 +1,10 @@
+UptimeGenerator
+===============
+
+usage:
+
+./script/generate uptime_controller 
+
+Now create an account @ http://uptime.openacs.org/ (or a similar svc) and point it @ http://yourserver/success.txt
+
+Optionally extend app/controllers/uptime_controller.rb success method to test for whatever you'd like.

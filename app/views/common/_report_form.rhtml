@@ -1,0 +1,12 @@
+<% form_for :report, :url => reports_url, :html => {:method => :post} do |f| %>
+  <div style="text-align: center;">
+    Show a 
+    <%= f.select :type, [["list and graph", :both], ["list", :list], ["graph", :graph]] %>
+    of expenses categorized in <%= f.select :category, [["all categories", :all]] + current_user.categories.collect {|p| [ p.name, p.id ]} %> 
+    <br/>
+    from <%= f.date_select :from %>
+    to <%= f.date_select :to %>
+    including tags <%= f.text_field :tags, :size => 8 %>
+    <%= submit_tag "Create" %>
+  </div>
+<% end %>

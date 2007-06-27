@@ -1,0 +1,25 @@
+<%= render :partial => 'common/header' %>
+
+
+<div id="errors">
+  <%= render :partial => 'errors', :locals => {:expense => @expense} %>
+</div>
+
+<%= render :partial => 'common/table_header' %>
+
+<%= render :partial => 'form', :locals => {:expense => @expense || nil, :method => :post, :url => expenses_url} %>
+
+<table id="expenses" class="expenses">
+  <% @expenses.each do |expense| %>
+    <tr id="<%= expense.dom_id %>" class="expenses" onMouseOver="set_class_name('<%= expense.dom_id -%>_meta', 'meta_show');" onMouseOut="set_class_name('<%= expense.dom_id -%>_meta',   'meta_hide');">
+      <%= render :partial => 'common/expense', :locals => {:expense => expense} %>
+    </tr>
+  <% end %>
+  <tr class="expenses" id="total">
+    <%= render :partial => 'common/total' %>
+  </tr>
+</table>
+
+<div id="pagination">
+  <%= pagination_links(@expense_pages) %> 
+</div>

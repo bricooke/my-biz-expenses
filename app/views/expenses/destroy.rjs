@@ -1,0 +1,4 @@
+if @dom_id != ""
+  page.visual_effect :fade, @dom_id
+  page.replace_html "total", :partial => "common/total"
+end

@@ -1,0 +1,1 @@
+page.replace_html @expense.dom_id, :partial => "form", :locals => {:method => :put, :url => expense_url(@expense)}

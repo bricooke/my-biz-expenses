@@ -1,0 +1,38 @@
+<%= render :partial => 'common/header' %>
+
+
+<% if @graph %>
+  <% if @both %>
+    <div style="text-align: right;"><%= link_to_function "hide graph", toggle_html('graph', 'toggle_graph', 'show graph', 'hide graph') + toggle('graph'), :id => "toggle_graph" %></div>
+  <% end %>
+  <div id="graph">
+    <%= horizontal_bar_graph @graph, {:bar_color => "darkblue", 
+                                      :text_color => "#fff", 
+                                      :background_color => "#999", 
+                                      :normalize => true,
+                                      :show_names => true,
+                                      :width => "900px"}, method(:number_to_currency) %>
+    <div style="text-align: center">
+      <small>bar graph courtesy of topfunky's <a href="http://nubyonrails.com/pages/css_graphs">css graphs</a></small>
+    </div>
+  </div>
+  <br/>
+<% end %>
+
+<% if @graph.nil? || @both  %>
+  <div>
+    <%= render :partial => 'common/table_header' %>
+  
+    <table id="expenses" class="expenses">
+      <% @expenses.each do |expense| %>
+        <tr id="<%= expense.dom_id %>" class="expenses" onMouseOver="set_class_name('<%= expense.dom_id -%>_meta', 'meta_show');" onMouseOut="set_class_name('<%= expense.dom_id -%>_meta',   'meta_hide');">
+          <%= render :partial => 'common/expense', :locals => {:expense => expense} %>
+        </tr>
+      <% end %>
+      <tr class="expenses" id="total">
+        <%= render :partial => 'common/total' %>
+      </tr>    
+    </table>
+  </div>
+<% end %>
+

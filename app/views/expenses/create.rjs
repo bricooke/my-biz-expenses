@@ -1,0 +1,12 @@
+
+page.insert_html :top, 'expenses', :partial => 'tr_expense',
+                  :locals => {:expense => @expense}
+
+page.visual_effect :highlight, @expense.dom_id
+
+@total_price = "---"
+page.replace_html "total", :partial => "common/total"
+
+                  
+page['expense_form'].reset
+page['expense_form'].down.focus

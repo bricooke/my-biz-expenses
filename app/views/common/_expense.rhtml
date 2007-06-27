@@ -1,0 +1,26 @@
+  <td class="date">
+    <%= expense.created_at.to_s(:short_date) %>
+  </td>
+  <td class="price">
+    <%= number_to_currency(expense.price) %>
+  </td>
+  <td class="name">
+    <%= h expense.name %>
+  </td>
+  <td class="category">
+    <%= h expense.category.name %>
+  </td>
+  <td class="tags">
+    <%= h expense.tag_list %>
+  </td>
+  <td class="meta">
+    <div id="<%= expense.dom_id -%>_meta" class="meta_hide">
+      <%= link_to_remote "<img class=\"icon\" src=\"/images/edit.gif\" alt=\"edit\" />",
+            :url => edit_expense_url(expense), :method => :get %>
+            
+      <%= link_to_remote "<img class=\"icon\" src=\"/images/trash.gif\" alt=\"delete\" />",
+            :url => expense_url(expense), 
+            :method => :delete,
+            :confirm => "Do you want to delete '#{expense.name}'?" %>
+    </div>
+  </td>

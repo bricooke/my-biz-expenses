@@ -1,0 +1,314 @@
+
+body { background-color: #fff; color: #333; }
+
+body, p, ol, ul, td {
+  font-family: verdana, arial, helvetica, sans-serif;
+  font-size:   13px;
+  line-height: 18px;
+}
+
+pre {
+  background-color: #eee;
+  padding: 10px;
+  font-size: 11px;
+}
+
+a { color: #000; }
+a:visited { color: #666; }
+a:hover { color: #fff; background-color:#000; }
+
+.fieldWithErrors {
+  padding: 2px;
+  background-color: red;
+  display: table;
+}
+
+#errorExplanation {
+  width: 400px;
+  border: 2px solid red;
+  padding: 7px;
+  padding-bottom: 12px;
+  margin-bottom: 20px;
+  background-color: #f0f0f0;
+}
+
+#errorExplanation h2 {
+  text-align: left;
+  font-weight: bold;
+  padding: 5px 5px 5px 15px;
+  font-size: 12px;
+  margin: -7px;
+  background-color: #c00;
+  color: #fff;
+}
+
+#errorExplanation p {
+  color: #333;
+  margin-bottom: 0;
+  padding: 5px;
+}
+
+#errorExplanation ul li {
+  font-size: 12px;
+  list-style: square;
+}
+
+div.uploadStatus {
+  margin: 5px;
+}
+
+div.progressBar {
+  margin: 5px;
+}
+
+div.progressBar div.border {
+  background-color: #fff;
+  border: 1px solid grey;
+  width: 100%;
+}
+
+div.progressBar div.background {
+  background-color: #333;
+  height: 18px;
+  width: 0%;
+}
+
+#container
+{
+  width: 1050px;
+  margin: 0px auto;
+}
+
+#header_footer
+{
+  clear: both;
+  margin: 0;
+  margin-top: 10px;
+  padding: .5em;
+  border-top: 1px solid lightgray;
+}
+
+#header .meta {
+  float:right;
+  font-size: 10px;
+  padding: 0px;
+  margin: 0px;
+}
+
+#header h1 {
+  padding: 0px;
+  margin: 0px;
+}
+
+#todos {
+  float: right;
+  font-size: 10px;
+  border: 1px solid lightgray;
+  border-top: none;
+  padding: 5px;
+}
+
+#todos ul {
+  margin: 0px;
+  padding: 10px;
+  font-size: 10px;
+}
+
+#todos a{
+  color: darkblue;
+}
+
+#todos a:hover{
+  text-decoration: underline;
+}
+
+#header a{
+  text-decoration: none;
+  color: black;
+}
+
+#header a:hover{
+  text-decoration: none;
+  color: black;
+  background-color: #fff;
+}
+
+/* front page */
+div.outer {
+}
+
+.DialogBody {
+  margin: 10px;
+  padding: 10px;
+  text-align: left;
+  border: 1px solid #ccc;
+  border-right: 1px solid #999;
+  border-bottom: 1px solid #999;
+  background-color: #fff;
+  height: 300px;  
+  width: 400px;
+  float: left;
+}
+
+#register {
+  float: left;
+  padding-right: 10px;
+}
+
+#login_form {
+  float: left;
+  padding-left: 10px;
+}
+
+/* reports */
+#links {
+  width: 100%;
+  text-align: center;
+}
+
+#report_form {
+  margin-top: 10px;
+  margin-bottom: 20px;
+  height: 35px;
+}
+
+
+/* expense listing */
+.expense_form_div{
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: lightgray;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+td, th {
+  padding: 3px;
+  vertical-align: top;
+}
+
+.expenses tr {
+  border-bottom: 1px solid lightgray;
+}
+
+.expenses tr:hover {
+  background-color: #eee;
+}
+
+th {
+  text-align: left;
+  color: white;
+  background-color: black;
+}
+
+.tags, #expense_tag_list {
+  width: 120px;
+}
+
+.name, #expense_name {
+  width: 280px;
+}
+
+.price, #expense_price {
+  width: 120px;
+}
+
+th.tags {
+  width: 170px;
+}
+
+.category, #expense_category {
+  width: 150px;
+}
+
+.date, #expense_date {
+  width: 220px;
+  text-align: center;
+}
+
+td.meta {
+  width: 100px;
+}
+
+td.meta div.meta_hide {
+  display: none;
+  width: 100px;
+}
+
+td.meta div.meta_show {
+  display: inline;
+  width: 100px;
+  font-size: 8pt;
+}
+
+th.meta_show {
+  width: 80px;
+}
+
+
+#total {
+  border-top: 2px solid black;
+  border-bottom: 2px solid black;
+}
+
+#pagination {
+  padding-top: 30px;
+  text-align: center;
+}
+
+.icon {
+  margin-top: 4px;
+  background-color: #999;
+  background-image: url(/images/bg_rounded.gif);
+  background-repeat: no-repeat;
+  border: 0px;
+}
+
+div.info {
+  clear: both; 
+  padding-top: 75px;
+  margin-left: 0px;
+  text-align: center; 
+  width: 900px
+}
+
+div.info p {
+  font-family: georgia, times, serif;
+  font-size: 16px;
+}
+
+div#footer {
+  clear: both;
+  height: 100%;
+  padding-top: 100px;
+  text-align: center;
+  font-size: 10px;
+  vertical-align: bottom;
+}
+
+div.auto_complete {
+  width: 350px;
+  background: #fff;
+  display: inline;
+}
+div.auto_complete ul {
+  border:1px solid #888;
+  margin:0;
+  padding:0;
+  width:100%;
+  list-style-type:none;
+}
+div.auto_complete ul li {
+  margin:0;
+  padding:3px;
+}
+div.auto_complete ul li.selected { 
+  background-color: #ffb; 
+}
+div.auto_complete ul strong.highlight { 
+  color: #800; 
+  margin:0;
+  padding:0;
+}

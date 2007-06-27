@@ -1,0 +1,12 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+books:
+  id: 1
+  name: Books
+  expenses_count: 1
+  default_category: true
+quentins_software:
+  id: 2
+  name: Software
+  expenses_count: 1
+  default_category: true
+  user_id: 1

@@ -1,0 +1,3 @@
+<tr id="<%= expense.dom_id %>" class="expenses" onMouseOver="set_class_name('<%= expense.dom_id -%>_meta', 'meta_show');" onMouseOut="set_class_name('<%= expense.dom_id -%>_meta',   'meta_hide');">
+  <%= render :partial => 'common/expense', :locals => {:expense => expense} %>
+</tr>

@@ -1,0 +1,70 @@
+= Currency Release History
+
+== Release 0.4.0: 2007/02/21
+
+=== MAJOR CHANGES IN THIS RELEASE FOR HISTORICAL RATE DATA
+
+Some changes are not backwards-compatible
+
+* ActiveRecord::Base.money macro is deprecated, use ActiveRecord::Base.attr_money macro.
+* Currency::Exchange is now Currency::Exchange::Rate::Source
+  NOTE: Currency::Exchange::* is reserved for buying/selling currencies, not for providing rate data.
+* Refactored xe.com homepage rate source as a Currency::Exchange::Rate::Source::Xe.
+* Refactored Currency::Exchange::Test as Currency::Exchange::Rate::Source::Test.
+* Support for historical money values and rates using ActiveRecord.
+* Added Rate::Source::Historical::Writer.
+* Added newyorkfed.org XML rate source.
+* Added thefinancials.com XML rate source.
+* Refactored rate deriviation into Currency::Exchange::Rate::Deriver.
+* Refactored rate caching into Currency::Exchange::Rate::Source::TimedCache.
+* Added Money attribute macros for classes not using ActiveRecord.
+* Refactored time-based rate caching into Currency::Exchange::Rate::Source::TimedCache.
+* Refactored Currency::Currency#format into Currency::Formatter.  
+  NOTE: old formatting options as :no_* no longer supported.
+* Refactored Currency::Currency#parse into Currency::Parser.
+* Currency::CurrencyFactory is now Currency::Currency::Factory.
+* Preliminary Currency::Exchange::Rate::Source::Failover.
+* Added copyright notices: LICENSE.txt, COPYING.txt.
+
+== Release 0.3.3: 2006/10/31
+
+* Inclusion of README.txt and Releases.txt into documentation.
+
+== Release 0.3.2: 2006/10/31
+
+* BOO!
+* Added expiration of rates in Xe.
+* Fixed Currency.symbol formatting when Currency.symbol.nil?
+* Added more Money tests.
+
+== Release 0.3.1: 2006/10/31
+
+* Remove debug puts.
+
+== Release 0.3.0: 2006/10/31
+
+* ActiveRecord money :*_field options are now named :*_column.
+* More ActiveRecord tests
+
+== Release 0.2.1: 2006/10/31
+
+* Fixed Manifest.txt
+
+== Release 0.2.0: 2006/10/31
+
+* Restructured namespace
+* Added more documentation
+* Added ActiveRecord tests
+
+== Release 0.1.2: 2006/10/30
+
+* Rakefile now uses Hoe
+
+== Release 0.1.1: 2006/10/30
+
+* Fixes gem packaging errors.
+
+== Release 0.1.0: 2006/10/29
+
+* Initial Release
+

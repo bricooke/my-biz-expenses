@@ -1,0 +1,55 @@
+
+<div class="outer">
+   <div class="DialogBody">
+     <div id="register">
+       <h3>Register</h3>
+       <%= error_messages_for :user %>
+       <% form_for :user, :url => users_path do |f| -%>
+       <p><label for="login">Login</label><br/>
+       <%= f.text_field :login %></p>
+
+       <p><label for="email">Email</label><br/>
+       <%= f.text_field :email %></p>
+
+       <p><label for="password">Password</label><br/>
+       <%= f.password_field :password %></p>
+
+       <p><label for="password_confirmation">Confirm Password</label><br/>
+       <%= f.password_field :password_confirmation %></p>
+
+       <p><%= submit_tag 'Sign up' %></p>
+       <% end -%>
+     </div>
+    </div>
+    <div class="DialogBody">
+     <div id="login_form">
+       <h3>Or Login</h3>
+       
+       <% form_tag sessions_path do -%>
+       <p><label for="login">Login</label><br/>
+       <%= text_field_tag 'login' %></p>
+
+       <p><label for="password">Password</label><br/>
+       <%= password_field_tag 'password' %></p>
+
+       <!-- Uncomment this if you want this functionality
+       <p><label for="remember_me">Remember me:</label>
+       <%= check_box_tag 'remember_me' %></p>
+       -->
+
+       <p><%= submit_tag 'Log in' %></p>
+       <% end -%>
+     </div>
+   </div>
+</div>
+
+<div class="info">
+  <h2>What's it do?</h2>
+  <p>mybizexpenses is a free app to track where your business cash is going. The target audience is folks like me: too lazy to use quickbooks. </p>
+  <p>If you find it useful, or have an idea to make it useful, <a href="mailto:me@briatcooke.com">let me know</a>.</p>
+</div>
+
+<div class="info">
+  <h2>What's it look like?</h2>
+  <img src="/images/mbe.png"/>
+</div>

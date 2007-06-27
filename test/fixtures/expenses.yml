@@ -1,0 +1,17 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+wnh:
+  id: 1
+  name: WebNoteHappy
+  created_at: 2007-02-26 17:46:37
+  updated_at: 2007-02-26 17:46:37
+  price_in_cents: 2995
+  category_id: 2
+  user_id: 1
+agile_web_dev:
+  id: 2
+  name: Agile Web Dev With Rails
+  created_at: 2007-02-26 17:46:37
+  updated_at: 2007-02-26 17:46:37
+  price_in_cents: 4995
+  category_id: 1
+  user_id: 1

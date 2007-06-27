@@ -1,0 +1,6 @@
+wnh_is_software:
+  id: 1
+  tag_id: 1
+  taggable_id: 1
+  taggable_type: Expense
+  created_at: <%= Time.now.to_s(:db) %>

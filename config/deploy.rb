@@ -11,7 +11,7 @@
 # form the root of the application path.
 
 set :application, "mybizexpenses"
-set :repository, "svn+ssh://roobasoft.com/var/svn/mybizexpenses/trunk"
+set :repository, "https://svn.roundhaus.com/roobasoft/mybizexpenses/trunk"
 
 # =============================================================================
 # ROLES

@@ -21,16 +21,16 @@ set :repository, "https://svn.roundhaus.com/roobasoft/mybizexpenses/trunk"
 # what the purpose of each machine is. You can also specify options that can
 # be used to single out a specific subset of boxes in a particular role, like
 # :primary => true.
-set :server, "mybizexpenses.com"
-role :web, server
-role :app, server
-role :db,  server, :primary => true
+set :server, "ec21"
+role :web, "ec21"
+role :app, "ec21"
+role :db,  "ec21", :primary => true
 ssh_options[:paranoid] = false
 # =============================================================================
 # OPTIONAL VARIABLES
 # =============================================================================
 set :deploy_to, "/var/www/#{application}" # defaults to "/u/apps/#{application}"
-# set :user, "flippy"            # defaults to the currently logged in user
+set :user, "www-data"            # defaults to the currently logged in user
 # set :scm, :darcs               # defaults to :subversion
 # set :svn, "/path/to/svn"       # defaults to searching the PATH
 # set :darcs, "/path/to/darcs"   # defaults to searching the PATH
@@ -43,6 +43,9 @@ set :deploy_to, "/var/www/#{application}" # defaults to "/u/apps/#{application}"
 # ssh_options[:keys] = %w(/path/to/my/key /path/to/another/key)
 # ssh_options[:port] = 25
 ssh_options[:paranoid] = false
+ssh_options[:forward_agent] = true
+set :use_sudo,      false
+
 
 # =============================================================================
 # TASKS
@@ -56,8 +59,7 @@ ssh_options[:paranoid] = false
 desc "Restart the mongrel cluster on the app server."
 namespace :deploy do
   task :restart, :roles => :app do
-    run "sudo mongrel_rails cluster::stop -C #{deploy_to}/current/config/mongrel_cluster.yml"
-    run "sudo mongrel_rails cluster::start -C #{deploy_to}/current/config/mongrel_cluster.yml"
+    run "touch #{deploy_to}/current/restart.txt"
   end
 end
 
@@ -67,7 +69,7 @@ task :after_update_code do
     run "ln -s #{shared_path}/#{share} #{release_path}/public/#{share}"
   end
   
-  %w(database.yml mongrel_cluster.yml).each do |conf|
+  %w(database.yml).each do |conf|
     run "cp #{shared_path}/#{conf} #{release_path}/config/#{conf}"
   end
   

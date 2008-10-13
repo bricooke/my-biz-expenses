@@ -11,7 +11,7 @@
 # form the root of the application path.
 
 set :application, "mybizexpenses"
-set :repository, "https://svn.roundhaus.com/roobasoft/mybizexpenses/trunk"
+set :repository, "git@ec21:mybizexpenses.git"
 
 # =============================================================================
 # ROLES
@@ -31,7 +31,7 @@ ssh_options[:paranoid] = false
 # =============================================================================
 set :deploy_to, "/var/www/#{application}" # defaults to "/u/apps/#{application}"
 set :user, "www-data"            # defaults to the currently logged in user
-# set :scm, :darcs               # defaults to :subversion
+set :scm, :git               # defaults to :subversion
 # set :svn, "/path/to/svn"       # defaults to searching the PATH
 # set :darcs, "/path/to/darcs"   # defaults to searching the PATH
 # set :cvs, "/path/to/cvs"       # defaults to searching the PATH

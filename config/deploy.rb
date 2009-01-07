@@ -64,7 +64,7 @@ namespace :deploy do
 end
 
 task :after_update_code do
-  %w(system mint).each do |share|
+  %w(system).each do |share|
     run "rm -rf #{release_path}/public/#{share}"
     run "ln -s #{shared_path}/#{share} #{release_path}/public/#{share}"
   end
